@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SDU-{#####}",
+ "creation": "2025-03-12 12:44:53.912578",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "run_id",
+  "start_time",
+  "status",
+  "end_time",
+  "data_backup"
+ ],
+ "fields": [
+  {
+   "fieldname": "run_id",
+   "fieldtype": "Data",
+   "label": "Run ID"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Date",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nPending\nCompleted\nRolled back"
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Date",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "data_backup",
+   "fieldtype": "Long Text",
+   "label": "Data Backup"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-12 12:45:47.637144",
+ "modified_by": "Administrator",
+ "module": "Phamos Utils",
+ "name": "Safe Data Update",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
