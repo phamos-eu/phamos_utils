@@ -7,7 +7,6 @@ import logging
 import uuid
 import json
 from datetime import datetime
-from types import SimpleNamespace
 
 class SafeDataUpdate(Document):
     def __init__(self, *args, **kwargs):
@@ -86,12 +85,12 @@ class SafeDataUpdate(Document):
                 else:
                     frappe.db.sql(f"UPDATE `tab{backup['document_type']}` SET `{backup['field_name']}` = NULL WHERE `name` = %s", (backup["document_name"],))
                 self.logger.info(f"Restored {backup['document_type']} {backup['document_name']}, field {backup['field_name']}.")
-                self.status = "Rolled back"
-                self.save(ignore_permissions=True)
-                frappe.db.commit()
             except Exception as e:
                 self.logger.error(f"Error restoring {backup['document_type']} {backup['document_name']}, field {backup['field_name']}: {e}", exc_info=True)
                 frappe.db.rollback()
+        self.status = "Rolled back"
+        self.save(ignore_permissions=True)
+        frappe.db.commit()
         self.logger.info(f"Rollback for document {self.name} completed.")
 
 if __name__ == "__main__":

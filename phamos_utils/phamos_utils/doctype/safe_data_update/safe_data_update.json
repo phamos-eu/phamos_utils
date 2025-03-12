@@ -29,6 +29,7 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
    "options": "\nPending\nCompleted\nRolled back",
    "read_only": 1
@@ -48,13 +49,14 @@
   {
    "fieldname": "target_doctype",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Target Doctype",
    "options": "DocType"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-12 16:15:17.397915",
+ "modified": "2025-03-12 16:27:54.561089",
  "modified_by": "Administrator",
  "module": "Phamos Utils",
  "name": "Safe Data Update",
