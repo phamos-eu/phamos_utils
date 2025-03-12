@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "run_id",
+  "target_doctype",
   "start_time",
   "status",
   "end_time",
@@ -22,28 +23,38 @@
   {
    "fieldname": "start_time",
    "fieldtype": "Date",
-   "label": "Start Time"
+   "label": "Start Time",
+   "read_only": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "\nPending\nCompleted\nRolled back"
+   "options": "\nPending\nCompleted\nRolled back",
+   "read_only": 1
   },
   {
    "fieldname": "end_time",
    "fieldtype": "Date",
-   "label": "End Time"
+   "label": "End Time",
+   "read_only": 1
   },
   {
    "fieldname": "data_backup",
    "fieldtype": "Long Text",
-   "label": "Data Backup"
+   "label": "Data Backup",
+   "read_only": 1
+  },
+  {
+   "fieldname": "target_doctype",
+   "fieldtype": "Link",
+   "label": "Target Doctype",
+   "options": "DocType"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-12 12:45:47.637144",
+ "modified": "2025-03-12 16:15:17.397915",
  "modified_by": "Administrator",
  "module": "Phamos Utils",
  "name": "Safe Data Update",
