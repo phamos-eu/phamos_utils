@@ -54,7 +54,7 @@ class SafeDataUpdate(Document):
 
             update_function(self, **kwargs)
             
-            self.data_backup = json.dumps(self.backups)
+            self.save_backup()
             self.status = "Completed"
             self.end_time = datetime.now()
             self.save(ignore_permissions=True)
@@ -71,13 +71,40 @@ class SafeDataUpdate(Document):
             self.save(ignore_permissions=True)
             raise
 
+    def save_backup(self):
+        # Save the backups into a json file
+        backup_file_path = frappe.utils.get_site_path("private", "files", f"{self.run_id}_backup.json")
+        with open(backup_file_path, "w") as backup_file:
+            json.dump(self.backups, backup_file)
+
+        # Attach the file to the data_backup_file field
+        with open(backup_file_path, "rb") as backup_file:
+            _file = frappe.get_doc({
+                "doctype": "File",
+                "file_name": f"{self.run_id}_backup.json",
+                "attached_to_doctype": self.doctype,
+                "attached_to_name": self.name,
+                "is_private": 1,
+                "content": backup_file.read()
+            })
+            _file.save()
+            self.data_backup_file = _file.file_url
+
     @frappe.whitelist()
     def rollback_changes(self):
         """
-        Rolls back changes using the single Safe Data Update document.
+        Rolls back changes using the data_backup_file.
         """
         self.logger.info(f"Starting rollback for document {self.name}...")
-        backups = json.loads(self.data_backup)
+
+        # Load the backups from the file
+        if not self.data_backup_file:
+            frappe.throw("No backup file attached.")
+        backup_file_path = frappe.utils.get_site_path("private", "files", self.data_backup_file.split("/")[-1])
+        with open(backup_file_path, "rb") as backup_file:
+            backups = backup_file.read().decode("utf-8")
+        backups = json.loads(backups)
+
         for backup in reversed(backups):
             try:
                 if backup["original_value"] is not None:

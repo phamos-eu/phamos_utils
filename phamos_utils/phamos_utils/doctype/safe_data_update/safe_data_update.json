@@ -12,7 +12,7 @@
   "start_time",
   "status",
   "end_time",
-  "data_backup"
+  "data_backup_file"
  ],
  "fields": [
   {
@@ -41,22 +41,21 @@
    "read_only": 1
   },
   {
-   "fieldname": "data_backup",
-   "fieldtype": "Long Text",
-   "label": "Data Backup",
-   "read_only": 1
-  },
-  {
    "fieldname": "target_doctype",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Target Doctype",
    "options": "DocType"
+  },
+  {
+   "fieldname": "data_backup_file",
+   "fieldtype": "Attach",
+   "label": "Data Backup File"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-03-12 16:27:54.561089",
+ "modified": "2025-03-18 13:33:27.850989",
  "modified_by": "Administrator",
  "module": "Phamos Utils",
  "name": "Safe Data Update",
