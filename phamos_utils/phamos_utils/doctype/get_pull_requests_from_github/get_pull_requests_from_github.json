@@ -5,20 +5,44 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "github_base_url",
   "github_token",
+  "github_repository",
   "list_of_parent_and_child_issues",
+  "get_pull_requests",
+  "result_section",
   "resulting_list_of_pull_requests"
  ],
  "fields": [
+    {
+        "fieldtype": "Data",
+        "fieldname": "github_base_url",
+        "label": "Github Base URL"
+    },
   {
    "fieldname": "github_token",
    "fieldtype": "Password",
    "label": "Github token"
   },
   {
+    "fieldtype": "Data",
+    "fieldname": "github_repository",
+    "label": "Github Repository"
+  },
+  {
    "fieldname": "list_of_parent_and_child_issues",
    "fieldtype": "Text",
    "label": "List of Parent and Child issues"
+  },
+  {
+    "fieldtype": "Button",
+    "fieldname": "get_pull_requests",
+    "label": "Get Pull Requests"
+  },
+  {
+    "fieldtype": "Section Break",
+    "fieldname": "result_section",
+    "label": "Result"
   },
   {
    "fieldname": "resulting_list_of_pull_requests",
@@ -30,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-03-18 14:40:21.861380",
+ "modified": "2025-03-18 15:40:21.861380",
  "modified_by": "Administrator",
  "module": "Phamos Utils",
  "name": "Get Pull Requests from Github",
