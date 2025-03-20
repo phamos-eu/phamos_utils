@@ -37,6 +37,14 @@ safe_data_update_instance.insert()
 safe_data_update_instance.run(your_update_function)
 ```
 
+#### Graphical Interface / Rollback
+
+After running this function, a new record of Safe Data Update will be created:
+
+![Safe Data Update](docs/images/safe_data_update.png)
+
+You can use the `Rollback Changes` button to restore the data to the original values.
+
 ### Class Methods
 
 #### `safe_update(doc_name, field_name, new_value, update_modified=False)`
@@ -58,6 +66,22 @@ Rolls back all changes made during the update process.
 ### Logging
 
 The `SafeDataUpdate` class uses Python's `logging` module to log information about the update process. Logs include information about successful updates, errors, and rollbacks.
+
+## Get Pull Requests from GitHub
+
+The `Get Pull Requests from GitHub` doctype is a tool to fetch pull requests from a specified GitHub repository.
+
+### Usage
+You can go to `/app/get-pull-requests-from-github` and set the following values:
+- Github Base URL
+- Github token
+- Github Repository
+- List of Parent and Child issues
+
+After setting these values, you can press the button `Get Pull Requests`. This will take all URLs from `List of Parent and Child issues` field and search the PR in GitHub in which these URLs are mentioned. The resulting PR URLs will appear in the `Resulting list of Pull Requests` field:
+
+![Get Pull Requests from GitHub](docs/images/get_pull_requests_from_github.png)
+
 
 ## Installation
 
