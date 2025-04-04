@@ -5,6 +5,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "sort_fixtures_tab",
+  "export_fixtures_and_sort_them",
+  "sort_json_tab",
   "input_section",
   "input_json",
   "sort_json",
@@ -37,12 +40,27 @@
    "fieldtype": "Long Text",
    "label": "Sorted",
    "read_only": 1
+  },
+  {
+   "fieldname": "sort_fixtures_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sort Fixtures"
+  },
+  {
+   "fieldname": "sort_json_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sort JSON"
+  },
+  {
+   "fieldname": "export_fixtures_and_sort_them",
+   "fieldtype": "Button",
+   "label": "Export fixtures and Sort them"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-04-04 14:29:08.524746",
+ "modified": "2025-04-04 14:49:05.180620",
  "modified_by": "Administrator",
  "module": "Phamos Utils",
  "name": "Sort JSON",

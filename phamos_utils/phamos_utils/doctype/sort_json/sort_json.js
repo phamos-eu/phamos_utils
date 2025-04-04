@@ -18,5 +18,18 @@ frappe.ui.form.on("Sort JSON", {
                 }
             }
         });
+    },
+
+    export_fixtures_and_sort_them: function(frm) {
+        frappe.call({
+            method: "phamos_utils.phamos_utils.doctype.sort_json.sort_json.export_fixtures_and_sort_them",
+            callback: function(r) {
+                frappe.msgprint({
+                    title: __('Success'),
+                    message: __('Fixtures exported and sorted successfully.'),
+                    indicator: 'green'
+                });
+            }
+        });
     }
 });
