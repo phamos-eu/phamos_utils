@@ -95,6 +95,13 @@ After setting these values, you can press the button `Get Pull Requests`. This w
     bench --site your-site install-app phamos_utils
     ```
 
+## Road Map
+
+TODOs:
+- [ ] Include the function to sort the fixture files and make it more general and user-friendly
+- [ ] Add a Logging functionality for debugging and more
+- [ ] Move all the custom apps we created and combine them into this app. So we only have one app to rule them all! ;)
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the `LICENSE` file for details.
