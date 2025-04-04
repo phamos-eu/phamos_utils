@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-04-04 07:27:49.091044",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "input_section",
+  "input_json",
+  "sort_json",
+  "output_section",
+  "sorted"
+ ],
+ "fields": [
+  {
+   "fieldname": "input_section",
+   "fieldtype": "Section Break",
+   "label": "Input"
+  },
+  {
+   "fieldname": "input_json",
+   "fieldtype": "Long Text",
+   "label": "Input JSON"
+  },
+  {
+   "fieldname": "sort_json",
+   "fieldtype": "Button",
+   "label": "Sort JSON"
+  },
+  {
+   "fieldname": "output_section",
+   "fieldtype": "Section Break",
+   "label": "Output"
+  },
+  {
+   "fieldname": "sorted",
+   "fieldtype": "Long Text",
+   "label": "Sorted",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-04-04 14:29:08.524746",
+ "modified_by": "Administrator",
+ "module": "Phamos Utils",
+ "name": "Sort JSON",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
