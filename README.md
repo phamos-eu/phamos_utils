@@ -90,9 +90,13 @@ The `Sort JSON` doctype is a utility to sort JSON files in a consistent and pred
 
 1. Navigate to `/app/sort-json` in your application.
 2. Use "Sort Fixtures" tab to run the "Export Fixtures and Sort them". This is similar to running `bench export-fixtures` but with a sort function included.
+
 ![Sort Fixtures](docs/images/sort_fixtures.png)
+
 3. Use the "Sort JSON" tab:
+
 ![Sort JSON](docs/images/sort_json.png)
+
 - Upload the JSON file you want to sort using the provided interface.
 - Press the `Sort JSON` button to sort the file. The sorted JSON will be displayed in the output section.
 - You can "Copy to Clipboard" the sorted JSON file for further use.
