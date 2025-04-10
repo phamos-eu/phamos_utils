@@ -20,6 +20,31 @@ frappe.ui.form.on("Sort JSON", {
         });
     },
 
+    copy_to_clipboard: function(frm) {
+        const sortedJson = frm.doc.sorted;
+        if (sortedJson) {
+            navigator.clipboard.writeText(sortedJson).then(function() {
+                frappe.msgprint({
+                    title: __('Success'),
+                    message: __('Sorted JSON copied to clipboard.'),
+                    indicator: 'green'
+                });
+            }, function(err) {
+                frappe.msgprint({
+                    title: __('Error'),
+                    message: __('Failed to copy sorted JSON to clipboard.'),
+                    indicator: 'red'
+                });
+            });
+        } else {
+            frappe.msgprint({
+                title: __('Error'),
+                message: __('No sorted JSON available to copy.'),
+                indicator: 'red'
+            });
+        }
+    },
+
     export_fixtures_and_sort_them: function(frm) {
         frappe.call({
             method: "phamos_utils.phamos_utils.doctype.sort_json.sort_json.export_fixtures_and_sort_them",

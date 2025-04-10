@@ -12,6 +12,7 @@
   "input_json",
   "sort_json",
   "output_section",
+  "copy_to_clipboard",
   "sorted"
  ],
  "fields": [
@@ -55,12 +56,17 @@
    "fieldname": "export_fixtures_and_sort_them",
    "fieldtype": "Button",
    "label": "Export fixtures and Sort them"
+  },
+  {
+   "fieldname": "copy_to_clipboard",
+   "fieldtype": "Button",
+   "label": "Copy to Clipboard"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-04-04 14:49:05.180620",
+ "modified": "2025-04-10 16:14:56.191204",
  "modified_by": "Administrator",
  "module": "Phamos Utils",
  "name": "Sort JSON",
