@@ -82,6 +82,60 @@ After setting these values, you can press the button `Get Pull Requests`. This w
 
 ![Get Pull Requests from GitHub](docs/images/get_pull_requests_from_github.png)
 
+## Sort JSON
+
+The `Sort JSON` doctype is a utility to sort JSON files in a consistent and predictable manner. This is particularly useful for maintaining clean and organized fixture files in your application.
+
+### Usage
+
+1. Navigate to `/app/sort-json` in your application.
+2. Use "Sort Fixtures" tab to run the "Export Fixtures and Sort them". This is similar to running `bench export-fixtures` but with a sort function included.
+![Sort Fixtures](docs/images/sort_fixtures.png)
+3. Use the "Sort JSON" tab:
+![Sort JSON](docs/images/sort_json.png)
+- Upload the JSON file you want to sort using the provided interface.
+- Press the `Sort JSON` button to sort the file. The sorted JSON will be displayed in the output section.
+- You can "Copy to Clipboard" the sorted JSON file for further use.
+
+### Features
+
+- **Consistent Sorting**: Ensures that the JSON files are sorted, based on the `name` key-value.
+- **User-Friendly Interface**: Provides an easy-to-use graphical interface for sorting JSON files.
+- **Batch Processing**: Allows sorting of multiple JSON files in one go.
+
+### Example
+
+Before sorting:
+```json
+[
+    {
+        ...
+        "name": "Sales Invoice-field_2",
+        ...
+    },
+    {
+        ...
+        "name": "Sales Invoice-field_1",
+        ...
+    }
+]
+```
+
+After sorting:
+```json
+[
+    {
+        ...
+        "name": "Sales Invoice-field_1",
+        ...
+    },
+    {
+        ...
+        "name": "Sales Invoice-field_2",
+        ...
+    }
+]
+```
 
 ## Installation
 
@@ -98,7 +152,7 @@ After setting these values, you can press the button `Get Pull Requests`. This w
 ## Road Map
 
 TODOs:
-- [ ] Include the function to sort the fixture files and make it more general and user-friendly
+- [x] Include the function to sort the fixture files and make it more general and user-friendly
 - [ ] Add a Logging functionality for debugging and more
 - [ ] Move all the custom apps we created and combine them into this app. So we only have one app to rule them all! ;)
 
