@@ -242,3 +242,17 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+		"dt": "Custom Field",
+		"filters": [
+			[
+				"name", "in",
+				[
+                    "Print Settings-custom_watermark",
+                    "Print Settings-custom_is_test_format"
+                ],
+            ]
+        ]
+    }
+]
